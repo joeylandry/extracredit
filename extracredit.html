@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Worksheet Solutions</title>
+</head>
+<body>
+    <h1>JavaScript Worksheet Solutions</h1>
+
+    <!-- Button for all problems -->
+    <button onclick="runAllProblems()">Run All Problems</button>
+
+    <script>
+        /* Problem 1 - counting loop */
+        function problem1() {
+            let output = "Problem 1:\n";
+            for (let i = 40; i >= 10; i -= 2) {
+                output += i + "\n";
+            }
+            alert(output);
+        }
+
+        /*  Problem 2 - number sums */
+        function problem2() {
+            alert("Problem 2:");
+            let sum = 0;
+            while (sum <= 20) {
+                let input = prompt("Problem 2 - Enter a number to add to the sum (current sum: " + sum + "):");
+                let number = parseFloat(input);
+                if (!isNaN(number)) {
+                    sum += number;
+                } else {
+                    alert("Invalid input, please enter a number.");
+                }
+            }
+            alert("The sum exceeded 20. Final sum: " + sum);
+        }
+
+        /* Problem 3 */
+        function problem3() {
+            alert("Problem 3:");
+            let sum = 0;
+            let numbers = [];
+            while (sum <= 20) {
+                let input = prompt("Problem 3 - Enter a number to add to the array (current sum: " + sum + "):");
+                let number = parseFloat(input);
+                if (!isNaN(number)) {
+                    sum += number;
+                    numbers.push(number);
+                } else {
+                    alert("Invalid input, please enter a number.");
+                }
+            }
+
+            /* display array */
+            alert("Numbers entered: " + numbers.toString());
+
+        }
+
+        /* Problem 4 */
+        function problem4() {
+            let output = "Problem 4:\n";
+
+            let songs = {};
+            songs["Get Back"] = "The Beatles";
+            songs["Touch of Grey"] = "Grateful Dead";
+            songs["Fast Car"] = "Tracy Chapman";
+            songs["Low Rider"] = "War";
+            songs["Little Wing"] = "Jimi Hendrix";
+
+            for (let song in songs) {
+                if (songs.hasOwnProperty(song)) {
+                    output += `"${song}" by ${songs[song]}\n`;
+                }
+            }
+            alert(output);
+        }
+
+        /* Problem 5 */
+        function problem5() {
+            alert("Problem 5:");
+            let songs = {
+                "Get Back": "The Beatles",
+                "Touch of Grey": "Grateful Dead",
+                "Fast Car": "Tracy Chapman",
+                "Low Rider": "War",
+                "Little Wing": "Jimi Hendrix"
+            };
+
+            let band = prompt("Problem 5 - Enter the name of a band to see their songs:");
+            let found = false;
+            let output = `Songs by ${band}:\n`;
+            for (let song in songs) {
+                if (songs[song].toLowerCase() === band.toLowerCase()) {
+                    output += song + "\n";
+                    found = true;
+                }
+            }
+            if (!found) {
+                output += "No songs found for this band.";
+            }
+            alert(output);
+        }
+
+        /* Run all problems */
+        function runAllProblems() {
+            problem1();  
+            problem2();   
+            problem3();    
+            problem4();    
+            problem5();    
+        }
+    </script>
+</body>
+</html>
